@@ -8,6 +8,8 @@
 #include <ctime>
 #include <string>
 #include <sstream>
+#include <ios>
+#include <fstream>
 
 using namespace std;
 
@@ -72,6 +74,14 @@ namespace Helper
         ostringstream s;
         s << e;
         return s.str();
+    }
+
+    void WriteAppLog(const string &s)
+    {
+        ofstream file("AppLog.txt", ios::app);
+        file << "[" << Helper::DateTime().GetDateTimeString() << "]"
+             << "\n" << s << endl << "\n";
+        file.close();
     }
 }
 
