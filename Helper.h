@@ -63,7 +63,7 @@ namespace Helper
 
         string GetDateTimeString(const string &sep = ":") const
         {
-            return GetDateString() + " " + GetTimeString(sep)
+            return GetDateString() + " " + GetTimeString(sep);
         }
     };
 
